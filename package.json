@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://luanlaluot.github.io",
   "dependencies": {
+    "@anatoliygatt/dark-mode-toggle": "^1.0.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@faker-js/faker": "^7.6.0",

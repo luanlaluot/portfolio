@@ -122,7 +122,7 @@ export type TPalette = {
   };
 };
 
-const palette: TPalette = {
+const COMMON: TPalette = {
   common: { black: "#000", white: "#fff" },
   primary: PRIMARY,
   secondary: SECONDARY,
@@ -151,6 +151,23 @@ const palette: TPalette = {
     focus: alpha(GREY[500], 0.24),
     hoverOpacity: 0.08,
     disabledOpacity: 0.48,
+  },
+};
+
+const palette = {
+  light: {
+    ...COMMON,
+    mode: "light",
+    text: { primary: GREY[800], secondary: GREY[600], disabled: GREY[500] },
+    background: { paper: GREY[200], default: "#fff", neutral: GREY[200] },
+    action: { ...COMMON.action, active: GREY[600] },
+  },
+  dark: {
+    ...COMMON,
+    mode: "dark",
+    text: { primary: "#fff", secondary: GREY[500], disabled: GREY[600] },
+    background: { paper: GREY[800], default: GREY[900], neutral: GREY[500] },
+    action: { ...COMMON.action, active: GREY[500] },
   },
 };
 

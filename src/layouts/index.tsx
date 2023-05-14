@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 // @mui
 import { styled } from "@mui/material/styles";
@@ -28,8 +27,6 @@ const Main = styled("div")(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function SidebarLayout() {
-  const [open, setOpen] = useState(false);
-
   return (
     <Box
       sx={{
@@ -37,8 +34,7 @@ export default function SidebarLayout() {
         minHeight: { lg: 1 },
       }}
     >
-      {/* <Nav openNav={open} onCloseNav={() => setOpen(false)} /> */}
-      <Header onOpenNav={() => setOpen(true)} />
+      <Header />
       <Main>
         <Outlet />
       </Main>

@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Collapse,
   Grid,
   IconButton,
   Theme,
@@ -17,7 +18,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 
 const SocialButton = styled(IconButton)(({ theme }) => ({
   marginRight: "10px",
-  color: "black",
+  color: theme?.palette.text.primary,
   borderRadius: "5px",
   ":hover": {
     backgroundColor: theme?.palette.primary.main,
@@ -34,9 +35,15 @@ const Home = () => {
         height: "100%",
         justifyContent: "center",
         alignItems: "center",
+        flexDirection: "column",
       }}
     >
-      <Grid container>
+      <Grid
+        container
+        sx={{
+          flex: 1,
+        }}
+      >
         <Grid
           item
           lg={6}
@@ -105,6 +112,24 @@ const Home = () => {
             <SocialButton>
               <PhoneIcon />
             </SocialButton>
+            {/* <SocialButton>
+              <Collapse
+                orientation="horizontal"
+                // in={checked}
+                collapsedSize={"1.5rem"}
+              >
+                <img
+                  src={require("assets/icons/lol.png")}
+                  srcSet={require("assets/icons/lol.png")}
+                  alt={"lol-button"}
+                  loading="lazy"
+                  style={{
+                    height: "1.5rem",
+                    width: "1.5rem",
+                  }}
+                />
+              </Collapse>
+            </SocialButton> */}
           </Box>
           <Box>
             <Button
@@ -130,10 +155,10 @@ const Home = () => {
             display={"flex"}
             alignItems={"center"}
             justifyContent={"center"}
-            sx={{
+            sx={(theme) => ({
               borderRadius: "50%",
-              border: "20px solid rgba(0, 0, 0, 0.07)",
-            }}
+              border: `20px solid rgba(0, 0, 0, 0.07)`,
+            })}
           >
             <img
               src={require("assets/images/avatar.jpg")}
@@ -150,6 +175,9 @@ const Home = () => {
           </Box>
         </Grid>
       </Grid>
+      {/* <Box>
+        Powered by <strong>MUI</strong>
+      </Box> */}
     </Container>
   );
 };

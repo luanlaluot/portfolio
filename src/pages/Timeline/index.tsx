@@ -104,9 +104,7 @@ const Timeline = () => {
                   sx={(theme) => ({
                     px: 4,
                     py: 3,
-                    backgroundColor: line.isWorking
-                      ? "white"
-                      : theme.palette.grey[300],
+                    backgroundColor: theme.palette.background.paper,
                   })}
                 >
                   {/* <Typography variant="h5" fontWeight={600} component="span">

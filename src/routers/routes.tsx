@@ -1,4 +1,4 @@
-import SidebarLayout from "layouts/sidebar";
+import SidebarLayout from "layouts";
 import AboutMe from "pages/AboutMe";
 import NotFound from "pages/NotFound";
 import ServerError from "pages/ServerError";
