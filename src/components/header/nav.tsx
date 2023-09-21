@@ -10,20 +10,13 @@ export const NAV = [
   },
   {
     id: 1,
-    name: "Skill",
-    to: "/skill",
-    icon: <Combine className="inline-block mb-1 h-5 w-5" />,
-    show: true,
-  },
-  {
-    id: 2,
     name: "Project",
     to: "/project",
     icon: <Projector className="inline-block mb-1 h-5 w-5" />,
     show: true,
   },
   {
-    id: 3,
+    id: 2,
     name: "Profile",
     to: "/profile",
     icon: <User className="inline-block mb-1 h-5 w-5" />,

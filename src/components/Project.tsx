@@ -12,7 +12,7 @@ const Project = ({ post }: any) => {
         >
           <Image
             fill
-            alt={`${post.title}`}
+            alt={`${post.name}`}
             src={
               "https://notionic.vercel.app/_next/image?url=%2Fcover.jpg&w=1080&q=75"
             }
@@ -23,19 +23,28 @@ const Project = ({ post }: any) => {
           <div className="relative mt-auto">
             <header className="flex flex-col justify-between md:flex-row md:items-baseline">
               <h2 className="text-lg md:text-xl font-medium mb-2 text-black dark:text-gray-100">
-                Notionic Example
+                {post.name}
               </h2>
               <span className="text-color-fix font-light flex-shrink-0 text-gray-600 dark:text-gray-400">
                 {/* <FormattedDate date={post.date} /> */}
               </span>
             </header>
             <p className="font-light block leading-8 text-gray-700 dark:text-gray-300">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              at purus ac mauris semper ultricies. Sed tortor elit, euismod vel
-              eros nec, faucibus faucibus orci. Cras ultricies, ex at elementum
-              mattis, augue nisi mattis risus, eu vulputate elit elit quis erat.
+              {post.description}
             </p>
-            {/* w-4/5  */}
+            <div className="flex flex-wrap">
+              {post.technology &&
+                post.technology.map((element: string) => {
+                  return (
+                    <p
+                      className="p-2 bg-slate-200 mr-2 mb-2 rounded-md"
+                      key={element}
+                    >
+                      {element}
+                    </p>
+                  );
+                })}
+            </div>
           </div>
         </article>
       </Link>
