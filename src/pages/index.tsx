@@ -1,14 +1,22 @@
+import Project from "@/components/Project";
 import Container from "@/layout/container";
 import { Contact, Download, Mail } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export default function index() {
   return (
     <Container>
-      <div className=" container mx-auto h-full flex px-5 py-2 mb-10 md:flex-row flex-col items-center">
+      <div className="container mx-auto flex px-5 py-2 mb-10 md:flex-row flex-col items-center">
         <div className="w-3/6">
-          <NotionAvatar className="text-gray-600 dark:text-gray-300" />
+          <div className="h-3/4 w-3/4">
+            <Image
+              className="rounded-[50%]"
+              alt="luanlaluot"
+              src={require("@/assets/images/avatar.png")}
+            />
+          </div>
         </div>
         <div className="flex flex-col md:w-3/6 md:items-start mb-6 md:mb-0 text-left">
           <div className="mb-6">
@@ -103,6 +111,11 @@ export default function index() {
           </div>
         </div>
       </div>
+      {Array(4)
+        .fill(0)
+        .map((post, index) => (
+          <Project key={`post.id` + index.toString()} post={post} />
+        ))}
     </Container>
   );
 }

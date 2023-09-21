@@ -18,7 +18,7 @@ function Nav() {
     activeMenu = router.pathname;
   }
   return (
-    <div className="flex">
+    <div className="flex dark:text-gray-300">
       {/* Desktop nav */}
       <ul className="hidden md:flex md:gap-1">
         {NAV.map(
@@ -69,7 +69,7 @@ function Nav() {
                         className="text-left hover:bg-gray-100 dark:hover:bg-gray-600 font-light block justify-between w-full px-4 py-2 leading-5"
                       >
                         {link.icon}
-                        <span className="m-1">{link.name}</span>
+                        <span className="inline-block m-1">{link.name}</span>
                       </button>
                     </Link>
                   )

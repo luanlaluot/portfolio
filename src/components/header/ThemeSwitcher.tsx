@@ -9,10 +9,12 @@ const ThemeSwitcher = () => {
   useEffect(() => {
     setHasMounted(true);
   }, []);
+  console.log("theme", theme);
+
   return (
     <>
       <button
-        // title={`Toggle theme - current ${theme}`}
+        title={`Toggle theme - current ${theme}`}
         aria-label="ThemeSwitcher"
         onClick={() =>
           setTheme(
