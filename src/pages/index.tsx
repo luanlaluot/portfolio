@@ -9,6 +9,40 @@ import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
 import { firebaseStore } from "@/service";
 import { take } from "lodash";
 
+const KNOWN = [
+  {
+    type: "Framework/Library",
+    skills: [
+      "ReactJS",
+      "React Native",
+      "NextJs",
+      "Redux",
+      "Redux Saga",
+      "Redux Persist",
+      "React Router Dom",
+      "React Navigation",
+    ],
+  },
+  {
+    type: "Database",
+    skills: ["SQL Server", "Firebase", "MongoDb"],
+  },
+  {
+    type: "Order",
+    skills: ["Git"],
+  },
+  {
+    type: "IDEs",
+    skills: [
+      "Visual Studio",
+      "Visual Studio Code",
+      "Android Studio",
+      "Xcode",
+      "SourceTree",
+    ],
+  },
+];
+
 export default function Home() {
   const [projects, setProjects] = React.useState<any[]>([]);
   React.useEffect(() => {
@@ -69,10 +103,53 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {projects &&
-        take(projects, 3).map((post, index) => (
-          <Project key={`post.id` + index.toString()} post={post} />
-        ))}
+
+      <div className="mb-10">
+        <header className="flex flex-col justify-between md:items-baseline mb-3">
+          <h2 className="text-xl md:text-2xl font-medium  text-black dark:text-gray-100">
+            What I know
+          </h2>
+        </header>
+        <div>
+          {KNOWN.map((e, index) => (
+            <div key={e.type} className="mb-2">
+              <p
+                className={
+                  "text-md md:text-lg font-semibold mb-2 dark:text-gray-100"
+                }
+              >
+                {e.type}
+              </p>
+              <div className="flex flex-wrap">
+                {e.skills.map((skill) => {
+                  return (
+                    <p
+                      className="cursor-pointer hover:bg-gray-300 px-2 py-1 bg-slate-200 mr-2 mb-2 rounded-md"
+                      key={skill}
+                    >
+                      {skill}
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <header className="flex flex-col justify-between md:items-baseline mb-3">
+          <h2 className="text-xl md:text-2xl font-medium  text-black dark:text-gray-100">
+            Project
+          </h2>
+        </header>
+        <div>
+          {projects &&
+            take(projects, 4).map((post, index) => (
+              <Project key={`post.id` + index.toString()} post={post} />
+            ))}
+        </div>
+      </div>
     </Container>
   );
 }

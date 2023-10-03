@@ -18,6 +18,8 @@ export default function ProjectPage() {
     data.forEach((doc) => {
       arr.push(doc.data());
     });
+    console.log(arr);
+
     setProjects(arr);
   };
   return (

@@ -5,7 +5,11 @@ import { motion } from "framer-motion";
 const Project = ({ post }: any) => {
   return (
     <motion.div>
-      <Link passHref href={"/"} scroll={false}>
+      <Link
+        passHref
+        href={{ pathname: `project/${post.name}`, query: { param: post.id } }}
+        scroll={false}
+      >
         <article
           key={post.id}
           className="group flex flex-col overflow-hidden relative mb-5 md:mb-8 cursor-pointer rounded-xl p-5"
@@ -32,7 +36,7 @@ const Project = ({ post }: any) => {
             <p className="font-light block leading-8 text-gray-700 dark:text-gray-300">
               {post.description}
             </p>
-            <div className="flex flex-wrap">
+            {/* <div className="flex flex-wrap">
               {post.technology &&
                 post.technology.map((element: string) => {
                   return (
@@ -44,7 +48,7 @@ const Project = ({ post }: any) => {
                     </p>
                   );
                 })}
-            </div>
+            </div> */}
           </div>
         </article>
       </Link>
