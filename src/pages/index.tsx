@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <Container>
       <div className="container mx-auto flex px-5 py-2 mb-10 md:flex-row flex-col items-center">
-        <div className="w-3/6">
+        <div className="flex w-3/6 justify-center mb-5 lg:md-0">
           <div className="h-3/4 w-3/4">
             <Image
               className="rounded-[50%]"
@@ -140,7 +140,7 @@ export default function Home() {
       <div>
         <header className="flex flex-col justify-between md:items-baseline mb-3">
           <h2 className="text-xl md:text-2xl font-medium  text-black dark:text-gray-100">
-            Project
+            Top project
           </h2>
         </header>
         <div>
